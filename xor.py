@@ -16,7 +16,7 @@ network = NetworkBuilder.build(2, [3], 2)
 
 network.fit(x_train, y_train, 1000, 0.1)
 
-x_test = np.array([[0, 0]])
+x_test = np.array([[0, np.nan]])
 
 probabilities, predictions = network.predict(x_test)
 

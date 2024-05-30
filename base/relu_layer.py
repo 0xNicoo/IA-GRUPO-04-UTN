@@ -13,9 +13,10 @@ class ReluLayer(Layer):
         self.last_input = np.array([])
 
     def fordward(self, inputs):
-        z = np.dot(inputs, self.W) + self.b
-        self.Z = z
         self.last_input = inputs
+        inputs_filled = np.nan_to_num(inputs) 
+        z = np.dot(inputs_filled, self.W) + self.b
+        self.Z = z
         a = relu(z)
         return a
 
